@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - QuickSurf Network</title>
+<style>
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        height: 100vh;
+    }
+
+    
+    .button-container {
+        position: absolute;
+        top: 35px;
+        right: 20px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .button-container a {
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: transparent;
+        border: 2px solid #fff;
+        border-radius: 25px;
+        color: #fff;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .button-container a:hover {
+        background-color: #fff;
+        color: #000;
+    }
+    .logo {
+        max-width: 350px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: auto;
+        margin: 20px 0;
+        
+    }
+
+    h1 {
+        margin: 30px 0 10px;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    form {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    input, textarea, button {
+        width: calc(100% - 20px);
+        margin: 10px 0;
+        padding: 12px 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #1456a1;
+        outline: none;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    button {
+        background-color: #1456a1;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0d4c91;
+    }
+
+   
+    footer {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+
+</style>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+</head>
+<body>
+    <img src="logo-removebg-preview.png" alt="QuickSurf Network Logo" class="logo" />
+    <div class="button-container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contactus.html">Contact us</a>
+        <a href="ourservices.html">Our Services</a>
+    </div>
+
+    
+    <h1>Contact Us</h1>
+    <form id="contactForm" onsubmit="submitContactForm(event)">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+  
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBLMT4_GE_5ROgEn1pNh3_qh1DyvMm3tao",
+            authDomain: "quicksurf-network.firebaseapp.com",
+            databaseURL: "https://quicksurf-network-default-rtdb.firebaseio.com",
+            projectId: "quicksurf-network",
+            storageBucket: "quicksurf-network.appspot.com",
+            messagingSenderId: "64091573640",
+            appId: "1:64091573640:web:8dca64e41362dc17c9be3d",
+            measurementId: "G-Y4ZS6TSQBX"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            database.ref('contacts').push({
+                name: name,
+                email: email,
+                message: message
+            }).then(() => {
+                alert('Thank you for your submission!');
+                document.getElementById('contactForm').reset();
+            }).catch(error => {
+                alert('Error: ' + error.message);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+
+
+    .button-container {
+        position: absolute;
+        top: 35px;
+        right: 20px;
+        display: flex;
+        gap: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: 2px solid #ffffff;
+        border-radius: 25px;
+        background-color: transparent;
+        color: #ffffff;
+        transition: all 0.3s ease-in-out;
+    }
+   
+    .button-container  a:hover {
+        background-color: #ffffff;
+        color: #000;
+    }
+ 
+    .home-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    h1 {
+        margin: 100px 0 20px;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .logo {
+        max-width: 350px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: auto;
+        margin: 20px 0;
+        
+    }
+  
+    .services-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+
+    .service-item {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-item img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .service-item a {
+        display: inline-block;
+        width: 200px; 
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        text-align: center;
+        border: 2px solid #ffffff;
+        border-radius: 25px;
+        background-color: transparent;
+        color: #ffffff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .service-item a:hover {
+        background-color: #ffffff;
+        color: #000;
+    }
+
+    .service-item .description {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #f1f1f1;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    <img src="logo-removebg-preview.png" alt="QuickSurf Network Logo" class="logo" />
+    <div class="button-container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="ourservices.html">Our Services</a>
+    </div>
+
+   
+    <h1>Our Services</h1>
+
+
+    <div class="services-container">
+        <div class="service-item">
+            <img src="Network solutions image.jpg" alt="Network Solutions">
+            <a href="contactus.html">Network Solutions</a>
+            <p class="description">Quick Surf Network provides custom design using heatmapping. We supply, install, and guarantee fast and responsive network solutions.</p>
+        </div>
+
+        <div class="service-item">
+            <img src="security2.png" alt="Security Solutions">
+            <a href="contactus.html">Security Solutions</a>
+            <p class="description">Customized home security solutions for your home and office. Monitor your home or office from anywhere in the world.</p>
+        </div>
+
+        <div class="service-item">
+            <img src="automation.jpg" alt="Automation">
+            <a href="contactus.html">Automation</a>
+            <p class="description">Experience seamless automation with our state-of-the-art systems tailored for convenience and efficiency.</p>
+        </div>
+    </div>
+</body>
+</html>
